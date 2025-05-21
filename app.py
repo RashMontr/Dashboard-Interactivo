@@ -7,6 +7,7 @@ from PIL import Image
 import plotly.express as px
 import plotly.graph_objects as go
 import locale
+from babel.dates import format_date
 
 # leer la data
 df = pd.read_excel('Adidas.xlsx')
@@ -31,7 +32,8 @@ locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8')
 
 col3, col4, col5 = st.columns([0.1, 0.45, 0.45])
 with col3:
-    box_date = str(datetime.datetime.now().strftime("%d/%B/%Y"))
+    today = datetime.datetime.now()
+    box_date = format_date(today, format='d MMMM y', locale='es')
     st.write(f"Actualizado el:  \n {box_date}")
 
 with col4:
