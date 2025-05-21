@@ -28,8 +28,6 @@ titulo_html = """
 with col2:
     st.markdown(titulo_html, unsafe_allow_html=True)
 
-locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8')
-
 col3, col4, col5 = st.columns([0.1, 0.45, 0.45])
 with col3:
     today = datetime.datetime.now()
